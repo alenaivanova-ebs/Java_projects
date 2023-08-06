@@ -2,7 +2,6 @@ package com.runner.service;
 
 import com.runner.dao.model.Card;
 
-
 public interface CardService extends ManagementService<Card> {
 
     Card find(String name) ;

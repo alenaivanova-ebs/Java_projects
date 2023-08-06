@@ -5,6 +5,8 @@ import com.runner.dao.model.Product;
 import com.runner.dao.ProductDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -25,6 +27,7 @@ public class ProductServiceImpl implements ProductService {
         this.productDAO = productDAO;
     }
 
+    @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public Long create(Product entity) {
         return productDAO.create(entity);
@@ -60,7 +63,7 @@ public class ProductServiceImpl implements ProductService {
             Double discount = productDAO.get(key).getDiscount().getDiscountPercent();
             Double price = productDAO.get(key).getPrice();
             Double priceWithDiscount = getPriceWithDiscount(price, quantity, discount);
-            double sum = priceWithDiscount * quantity;
+            Double sum = priceWithDiscount * quantity;
             total = total + sum;
         }
         return total;
@@ -148,7 +151,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Double getCardDiscount(Double total, Card card) {
-        Double cardDiscount = card.getCard_discount() / 100;
+        Double cardDiscount = card.getCardDiscount() / 100;
         return total * cardDiscount;
     }
 }

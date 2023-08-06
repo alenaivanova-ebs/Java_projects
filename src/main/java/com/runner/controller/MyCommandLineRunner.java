@@ -13,7 +13,6 @@ import java.util.Map;
 
 @Component
 public class MyCommandLineRunner implements CommandLineRunner {
-
     private ProductService productService;
     private CardService cardService;
 
@@ -26,7 +25,7 @@ public class MyCommandLineRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws IOException {
 //        Map<Long, Long> argsMap = new HashMap<>();
-//        String cardName = null;
+//        String cardName = '';
 //        for (String arg : args) {
 //            String[] parts = arg.split("-");
 //            if (!parts[0].equals("card")) {

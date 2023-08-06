@@ -19,7 +19,6 @@ import java.util.Locale;
 @RequestMapping("products")
 public class ProductController {
     private ProductService productService;
-
     private MessageSource messageSource;
 
     @Autowired
@@ -46,9 +45,9 @@ public class ProductController {
     }
 
     @DeleteMapping("/{productId}")
-    public InfoResponse deleteProduct(@PathVariable Long productId) {
+    public InfoResponse deleteProduct(@PathVariable Long productId,Locale locale) {
         productService.delete(productId);
-        String message = "product was deleted";
+        String message = messageSource.getMessage("label.not.found.product", null, locale);
         return new InfoResponse(
                 HttpStatus.NO_CONTENT.value(),
                 message + ":" + productId,

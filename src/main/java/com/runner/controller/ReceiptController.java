@@ -20,7 +20,6 @@ public class ReceiptController {
     private ProductService productService;
     private CardService cardService;
 
-
     @Autowired
     public ReceiptController(ProductService productService, CardService cardService) {
         this.productService = productService;
@@ -29,13 +28,9 @@ public class ReceiptController {
 
     @GetMapping("/receipt")
     public void printReceipt(@RequestParam Map<String, String> allQueryParams) throws IOException {
-        System.out.println(allQueryParams);
         List<String> keys = new ArrayList<>();
         for (Map.Entry<String, String> entry : allQueryParams.entrySet()) {
             String key = entry.getKey();
-            String quantity = entry.getValue();
-            System.out.println(key);
-            System.out.println(quantity);
             if (!key.contains("count") & !key.contains("card")) {
                 keys.add(key);
             }

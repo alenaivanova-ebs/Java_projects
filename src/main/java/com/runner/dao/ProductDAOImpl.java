@@ -1,22 +1,13 @@
 package com.runner.dao;
 
 import com.runner.dao.model.Product;
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Restrictions;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
-@Transactional
 public class ProductDAOImpl implements ProductDAO {
-
     @PersistenceContext
     private EntityManager entityManager;
 
@@ -34,7 +25,10 @@ public class ProductDAOImpl implements ProductDAO {
 
     @Override
     public Product find(String name) {
-        return (Product) entityManager.createQuery("SELECT u from Product  u WHERE u.name = :productname").setParameter("productname", name).getSingleResult();
+        return (Product) entityManager
+                .createQuery("SELECT u from Product  u WHERE u.name = :productname")
+                .setParameter("productname", name)
+                .getSingleResult();
     }
 
     @Override

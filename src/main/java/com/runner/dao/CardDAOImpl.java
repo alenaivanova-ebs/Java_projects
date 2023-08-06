@@ -1,15 +1,7 @@
 package com.runner.dao;
 
 import com.runner.dao.model.Card;
-import com.runner.dao.model.Product;
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Restrictions;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -17,7 +9,6 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 @Repository
-@Transactional
 public class CardDAOImpl implements CardDAO{
 
     @PersistenceContext
@@ -40,6 +31,8 @@ public class CardDAOImpl implements CardDAO{
 
     @Override
     public Long create(Card entity) {
-        return null;
+        em.persist(entity);
+        String name = entity.getCardName();
+        return find(name).getId();
     }
 }

@@ -12,7 +12,7 @@ public class ProductValidator {
     private static MessageSource messageSource;
 
     @Autowired
-    public void setTagService(ProductService productService) {
+    public void setProductService(ProductService productService) {
         this.productService = productService;
     }
 

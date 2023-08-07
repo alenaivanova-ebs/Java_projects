@@ -24,18 +24,18 @@ public class MyCommandLineRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws IOException {
-//        Map<Long, Long> argsMap = new HashMap<>();
-//        String cardName = '';
-//        for (String arg : args) {
-//            String[] parts = arg.split("-");
-//            if (!parts[0].equals("card")) {
-//                argsMap.put(Long.parseLong(parts[0]), Long.parseLong(parts[1]));
-//            } else {
-//                cardName = parts[1];
-//            }
-//        }
-//        Card card = cardService.find(cardName);
-//        productService.createReceipt(argsMap, card);
+        Map<Long, Long> argsMap = new HashMap<>();
+        String cardName = "";
+        for (String arg : args) {
+            String[] parts = arg.split("-");
+            if (!parts[0].equals("card")) {
+                argsMap.put(Long.parseLong(parts[0]), Long.parseLong(parts[1]));
+            } else {
+                cardName = parts[1];
+            }
+        }
+        Card card = cardService.find(cardName);
+        productService.createReceipt(argsMap, card);
     }
 
 }

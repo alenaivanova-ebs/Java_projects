@@ -1,4 +1,4 @@
-# Java_projects
+# Requirements
 Develop a console application that implements the functionality of generating a receipt in a store.
 
 1. In this task, it is important to show an understanding of OOP, the ability to build models (identify classes, interfaces, their relationships), share functionality between them, and also know the syntax of the language itself. It is obligatory to use design patterns (Factory, Builder, Decorator). Pay attention to resistance to changes in logic and avoid copy-paste.

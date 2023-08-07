@@ -9,6 +9,6 @@ Develop a console application that implements the functionality of generating a 
 4. Implement receipt output to a file.
 5. Use the gradle project builder.
 6. Cover functionality with unit tests (at least 70%).
-7. Replace the storage of initial data (item 11) in files with MySQL; make 2 tables (product and discount_card); Operation DDL must be stored in src/main/resources in a file with .sql extension; store the database connection settings in application.properties.
+7. Replace the storage of initial data with MySQL; make 2 tables (product and discount_card); store the database connection settings in application.properties.
 8. Implement a RESTFUL interface (for example, receive a check via GET http://localhost:8080/check?itemId=1&itemId=1). Implementation of your choice (Servlet, Spring). UI does not need to be implemented.
 

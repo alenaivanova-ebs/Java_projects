@@ -1,12 +1,12 @@
 # Java_projects
-Разработать консольное приложение, реализующее функционал формирования чека в магазине.
-1. В данном задании важно показать понимание ООП, умение строить модели (выделять классы, интерфейсы, их связи), разделять функционал между ними, а также знать синтаксис самого языка. Обязательно применение паттернов проектирования (Factory, Builder, Decorator). Обратить внимание на устойчивость к изменениям в логике и избегать копипаста.
-2. Использовать Java 17, gradle 7.5.
-3. Приложение запускается java RunnerClassName <набор_параметров>, где набор параметров в формате itemId-quantity (itemId - идентификатор товара, quantity его количество. Например: java CheckRunner 3-1 2-5 5-1card-1234 должен сформировать и вывести в консоль чек содержащий в себе наименование товара с id=3 в количестве 1шт, то же самое с id=2 в количестве 5 штук, id=5 - одна штука и т. д. Card-1234 означает, что была предъявлена скидочная карта с номером 1234. Необходимо вывести в консоль сформированный чек (вариант на рисунке), содержащий в себе список товаров и их количество с ценой, а также рассчитанную сумму с учетом скидки по предъявленной карте (если она есть).
-4.  Среди товаров предусмотреть акционные. Если их в чеке больше пяти, то сделать скидку 10% по этой позиции. Данную информацию отразить в чеке.
-5.  Набор товаров и скидочных карт может задаваться прямо в коде, массивом или коллекцией объектов. Их количество и номенклатура имеет тестовый характер, поэтому наименование и количество свободные. 6. Реализовать обработку исключений (например, товара с id или файла не существует  и т. д.).
-6.  Реализовать вывод чека в файл.
-7. Использовать сборщик проекта gradle.
-8. Покрыть функционал юнит-тестами (не менее 70%).
-9.* Замена хранения исходных данных (п.11) в файлах на PostgreSQL; сделать 2 таблицы (product и discount_card); DDL операции должны храниться в src/main/resources в файле с расширением *.sql; настройки подключения к БД хранить в application.properties. 14.** Реализовать RESTFUL - интерфейс (например, получать чек по GET http://localhost:8080/check?itemId=1&itemId=1). Реализация на выбор (Servlet, Spring). UI реализовывать не нужно.
+Develop a console application that implements the functionality of generating a receipt in a store.
+
+In this task, it is important to show an understanding of OOP, the ability to build models (identify classes, interfaces, their relationships), share functionality between them, and also know the syntax of the language itself. It is obligatory to use design patterns (Factory, Builder, Decorator). Pay attention to resistance to changes in logic and avoid copy-paste.
+Use Java 17, gradle 7.5.
+The application is launched by java RunnerClassName <parameter_set>, where the parameter set is in the itemId-quantity format (itemId is the product identifier, quantity is its quantity. For example: java CheckRunner 3-1 2-5 5-1card-1234 should generate and output to the console a check containing the the name of the product with id=3 in the amount of 1 item, the same with id=2 in the amount of 5 items, id=5 - one item, etc. Card-1234 means that a discount card with the number 1234 was presented. a generated receipt (version in the figure) containing a list of goods and their quantity with a price, as well as the calculated amount, taking into account the discount on the presented card (if any), is sent to the console.
+Among the goods to provide promotional. If there are more than five of them in the check, then make a 10% discount on this item. This information should be reflected in the check.
+A set of goods and discount cards can be set directly in the code, by an array or a collection of objects. Their number and nomenclature is of a test nature, therefore the name and quantity are free. 6. Implement exception handling (for example, product with id or file does not exist, etc.).
+Implement receipt output to a file.
+Use the gradle project builder.
+Cover functionality with unit tests (at least 70%). 9.* Replacing the storage of initial data (item 11) in files with PostgreSQL; make 2 tables (product and discount_card); Operation DDL must be stored in src/main/resources in a file with .sql extension; store the database connection settings in application.properties. 14.* Implement a RESTFUL interface (for example, receive a check via GET http://localhost:8080/check?itemId=1&itemId=1). Implementation of your choice (Servlet, Spring). UI does not need to be implemented.
 

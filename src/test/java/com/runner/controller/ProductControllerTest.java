@@ -50,16 +50,16 @@ class ProductControllerTest {
                 .andExpect(jsonPath("$.size()", is(productList.size())));
     }
 
-//    @Test
-//    public void testGetById() throws Exception {
-//        final Long productId = 1L;
-//        Product product = getProduct();
-//        given(productService.get(productId)).willReturn(product);
-//        this.mockMvc.perform(get("/products/{id}", productId))
-//                .andExpect(status().isOk())
-//                .andExpect(jsonPath("$.name", is(product.getName())))
-//                .andExpect(jsonPath("$.price", is(product.getPrice())));
-//    }
+    @Test
+    public void testGetById() throws Exception {
+        final Long productId = 1L;
+        Product product = getProduct();
+        given(productService.get(productId)).willReturn(product);
+        this.mockMvc.perform(get("/products/{id}", productId))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.name", is(product.getName())))
+                .andExpect(jsonPath("$.price", is(product.getPrice())));
+    }
 
     @Test
     public void testDeleteById() throws Exception {

@@ -1,6 +1,7 @@
 package com.runner.dao;
 
 import com.runner.dao.model.Card;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -13,6 +14,7 @@ public class CardDAOImpl implements CardDAO{
 
     @PersistenceContext
     private EntityManager em;
+
 
     @Override
     public Card find(String name) {

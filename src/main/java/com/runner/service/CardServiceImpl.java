@@ -8,12 +8,12 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class CardServiceImpl implements CardService{
+public class CardServiceImpl implements CardService {
 
     private CardDAO cardDAO;
 
     @Autowired
-    public CardServiceImpl( CardDAO cardDAO) {
+    public CardServiceImpl(CardDAO cardDAO) {
         this.cardDAO = cardDAO;
     }
 

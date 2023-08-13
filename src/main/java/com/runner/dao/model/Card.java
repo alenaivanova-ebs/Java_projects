@@ -13,11 +13,11 @@ public class Card {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "card_name")
-    private String cardName;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "card_discount")
-    private Double cardDiscount;
+    @Column(name = "discount")
+    private Double discount;
 
 
     public Long getId() {
@@ -25,24 +25,23 @@ public class Card {
     }
 
     public String getCardName() {
-        return cardName;
+        return name;
     }
 
     public Double getCardDiscount() {
-        return cardDiscount;
+        return discount;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
-
     @Override
     public String toString() {
         return "Card{" +
                 "id=" + id +
-                ", card_name='" + cardName + '\'' +
-                ", card_discount=" + cardDiscount +
+                ", name='" + name + '\'' +
+                ", discount=" + discount +
                 '}';
     }
 }

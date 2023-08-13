@@ -19,6 +19,8 @@ services:
     environment:
       MYSQL_DATABASE: gift
       MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: root
+      MYSQL_HOST: mysqldb
 
 
 

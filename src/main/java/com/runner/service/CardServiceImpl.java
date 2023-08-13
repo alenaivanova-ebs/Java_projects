@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Service
 public class CardServiceImpl implements CardService {
 
@@ -29,7 +31,7 @@ public class CardServiceImpl implements CardService {
     }
 
     @Override
-    public Card get(Long id) {
+    public Optional<Card> get(Long id) {
         return cardDAO.get(id);
     }
 

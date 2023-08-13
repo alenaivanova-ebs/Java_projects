@@ -1,6 +1,8 @@
 package com.runner.service;
 
 
+import java.util.Optional;
+
 public interface ManagementService<T> {
     /**
      * Create entity in database
@@ -17,7 +19,7 @@ public interface ManagementService<T> {
      * @return Entity from database by id;
 
      */
-    T get(Long id) ;
+    Optional<T> get(Long id) ;
 
     /**
      * Update entity in database

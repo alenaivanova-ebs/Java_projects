@@ -1,8 +1,10 @@
 package com.runner.dao;
 
 
+import java.util.Optional;
+
 public interface DAOManager<T> {
-    T get(Long id);
+    Optional<T> get(Long id);
     Long create(T entity);
 
 }

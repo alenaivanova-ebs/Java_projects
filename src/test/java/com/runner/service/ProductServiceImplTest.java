@@ -39,8 +39,8 @@ public class ProductServiceImplTest {
     @Test
     public void testGet()  {
         Product product = getProduct();
-        when(productDAO.get(1L)).thenReturn(product);
-        Product productActual = productService.get(1L);
+        when(productDAO.get(1L).get()).thenReturn(product);
+        Product productActual = productService.get(1L).get();
         assertEquals(product, productActual);
     }
 

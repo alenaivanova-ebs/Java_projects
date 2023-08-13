@@ -18,7 +18,7 @@ import java.util.Locale;
 
 @SpringBootApplication
 public class Application {
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
@@ -39,6 +39,7 @@ public class Application {
         localeResolver.setDefaultLocale(Locale.ENGLISH);
         return localeResolver;
     }
+
     @Bean
     public MessageSource messageSource() {
         ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();

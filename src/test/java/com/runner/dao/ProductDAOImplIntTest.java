@@ -21,7 +21,7 @@ public class ProductDAOImplIntTest {
     @Test
     public void testGet() {
         Product prExpected = getProduct();
-        Product product = productDAO.get(1L);
+        Product product = productDAO.get(1L).get();
         System.out.println(product.getName());
         assertEquals(prExpected, product);
     }

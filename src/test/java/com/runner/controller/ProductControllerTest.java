@@ -16,6 +16,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -54,7 +56,7 @@ class ProductControllerTest {
     public void testGetById() throws Exception {
         final Long productId = 1L;
         Product product = getProduct();
-        given(productService.get(productId)).willReturn(product);
+        given(productService.get(productId)).willReturn(Optional.of(product));
         this.mockMvc.perform(get("/products/{id}", productId))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name", is(product.getName())))

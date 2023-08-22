@@ -19,6 +19,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.junit4.SpringRunner;
 
 
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
@@ -38,9 +40,9 @@ public class ProductServiceImplTest {
 
     @Test
     public void testGet()  {
-        Product product = getProduct();
-        when(productDAO.get(1L).get()).thenReturn(product);
-        Product productActual = productService.get(1L).get();
+        Optional<Product> product = Optional.of(getProduct());
+        when(productDAO.get(1L)).thenReturn(product);
+        Optional<Product> productActual = productService.get(1L);
         assertEquals(product, productActual);
     }
 

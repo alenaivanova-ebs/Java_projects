@@ -8,6 +8,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(SpringExtension.class)
@@ -20,9 +23,8 @@ public class ProductDAOImplIntTest {
 
     @Test
     public void testGet() {
-        Product prExpected = getProduct();
-        Product product = productDAO.get(1L).get();
-        System.out.println(product.getName());
+        Optional<Product> prExpected = Optional.ofNullable(getProduct());
+        Optional<Product> product = productDAO.get(1L);
         assertEquals(prExpected, product);
     }
 

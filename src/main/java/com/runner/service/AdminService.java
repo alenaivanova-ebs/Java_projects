@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AdminService {
-    @PreAuthorize("hasRole('ROLE_ADMIN'")
-    public void doAdminStuff(){
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public void doAdminStuff() {
         System.out.println("for admins only");
     }
 }

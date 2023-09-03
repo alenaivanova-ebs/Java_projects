@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service
 public class CardServiceImpl implements CardService {
 
-    private CardDAO cardDAO;
+    private final CardDAO cardDAO;
 
     @Autowired
     public CardServiceImpl(CardDAO cardDAO) {

@@ -1,7 +1,5 @@
 package com.runner.dao.model;
 
-
-
 import javax.persistence.*;
 import java.util.Objects;
 
